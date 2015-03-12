@@ -1,0 +1,1921 @@
+  [1m[36m (18.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (15.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTasks (20150311161300)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "done" boolean, "name" varchar, "notes" text, "priority" integer, "due" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150311161300"]]
+  [1m[35m (15.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:17:13 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (uninitialized constant Netzke::Basepace):
+    1: <%= netzke :tasks, height: 400 %>
+  app/components/tasks.rb:1:in `<top (required)>'
+  app/views/welcome/index.html.erb:1:in `_app_views_welcome_index_html_erb__1421546686100689679_33390820'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (10.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (24.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:17:46 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (13.1ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `attr_accessible' for #<Class:0x000000040483b0>):
+    1: <%= netzke :tasks, height: 400 %>
+  app/models/task.rb:2:in `<class:Task>'
+  app/models/task.rb:1:in `<top (required)>'
+  app/views/welcome/index.html.erb:1:in `_app_views_welcome_index_html_erb__1421546686100689679_33390820'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (10.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (21.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:19:08 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (62.5ms)
+Completed 500 Internal Server Error in 68ms
+
+ActionView::Template::Error (No such file or directory - /home/hblues/dev/rails/netzke_task_manager/public/extjs/examples/ux/grid/menu/ListMenu.js):
+    1: <%= netzke :tasks, height: 400 %>
+  app/views/welcome/index.html.erb:1:in `_app_views_welcome_index_html_erb__1421546686100689679_33390820'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (9.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (21.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:24:57 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (53.3ms)
+Completed 500 Internal Server Error in 56ms
+
+ActionView::Template::Error (No such file or directory - /home/hblues/dev/rails/netzke_task_manager/public/extjs/examples/ux/grid/menu/ListMenu.js):
+    1: <%= netzke :tasks, height: 400 %>
+  app/views/welcome/index.html.erb:1:in `_app_views_welcome_index_html_erb__1421546686100689679_33390820'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (9.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (22.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:31:43 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (No such file or directory - /home/hblues/dev/rails/netzke_task_manager/public/extjs/examples/ux/grid/menu/ListMenu.js):
+    1: <%= netzke :tasks, height: 400 %>
+  app/views/welcome/index.html.erb:1:in `_app_views_welcome_index_html_erb__1421546686100689679_33390820'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (9.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (21.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:33:07 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (67.1ms)
+Completed 200 OK in 78ms (Views: 77.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css" for 127.0.0.1 at 2015-03-12 00:33:07 +0800
+
+ActionController::RoutingError (No route matches [GET] "/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (23.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (11.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (22.1ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:33:07 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:33:07 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:33:36 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (84.1ms)
+Completed 200 OK in 99ms (Views: 98.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css" for 127.0.0.1 at 2015-03-12 00:33:36 +0800
+
+ActionController::RoutingError (No route matches [GET] "/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (11.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (24.9ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:33:36 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:33:36 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 44ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:33:38 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css" for 127.0.0.1 at 2015-03-12 00:33:38 +0800
+
+ActionController::RoutingError (No route matches [GET] "/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (13.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (61.9ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:33:39 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:33:39 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:33:41 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css" for 127.0.0.1 at 2015-03-12 00:33:41 +0800
+
+ActionController::RoutingError (No route matches [GET] "/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (17.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (34.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (45.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (57.6ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:33:41 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:33:41 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:36:40 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css" for 127.0.0.1 at 2015-03-12 00:36:40 +0800
+
+ActionController::RoutingError (No route matches [GET] "/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (34.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (49.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (10.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (20.7ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:36:40 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:36:40 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:37:41 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (77.4ms)
+Completed 200 OK in 97ms (Views: 88.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css" for 127.0.0.1 at 2015-03-12 00:37:41 +0800
+
+ActionController::RoutingError (No route matches [GET] "/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (22.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (11.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (23.5ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:37:41 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:37:41 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:41:12 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (70.8ms)
+Completed 200 OK in 89ms (Views: 80.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:41:12 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/extjs/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" for 127.0.0.1 at 2015-03-12 00:41:12 +0800
+
+ActionController::RoutingError (No route matches [GET] "/extjs/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (20.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (13.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (24.2ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:41:12 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/extjs/build/ext-all-debug.js" for 127.0.0.1 at 2015-03-12 00:41:12 +0800
+
+ActionController::RoutingError (No route matches [GET] "/extjs/build/ext-all-debug.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (16.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (10.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (22.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:41:14 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 56ms (Views: 55.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/extjs/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" for 127.0.0.1 at 2015-03-12 00:41:14 +0800
+
+ActionController::RoutingError (No route matches [GET] "/extjs/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (17.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (9.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (21.3ms)
+
+
+Started GET "/extjs/build/ext-all-debug.js" for 127.0.0.1 at 2015-03-12 00:41:14 +0800
+
+ActionController::RoutingError (No route matches [GET] "/extjs/build/ext-all-debug.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (9.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (22.3ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:41:14 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 38ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:41:14 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:41:17 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/extjs/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css" for 127.0.0.1 at 2015-03-12 00:41:17 +0800
+
+ActionController::RoutingError (No route matches [GET] "/extjs/packages/ext-theme-crisp/build/resources/ext-theme-crisp-all.css"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (10.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (27.4ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:41:17 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/extjs/build/ext-all-debug.js" for 127.0.0.1 at 2015-03-12 00:41:17 +0800
+
+ActionController::RoutingError (No route matches [GET] "/extjs/build/ext-all-debug.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.1) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (35.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (54.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (10.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (24.5ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:41:17 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:41:50 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:41:50 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:41:50 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:41:53 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:41:57 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"name", "direction"=>"ASC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>2, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"name", "direction"=>"ASC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>2, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  ORDER BY tasks.name asc LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:41:58 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"name", "direction"=>"DESC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>3, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"name", "direction"=>"DESC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>3, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  ORDER BY tasks.name desc LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:41:59 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"done", "direction"=>"ASC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>4, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"done", "direction"=>"ASC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>4, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  ORDER BY tasks.done asc LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:42:00 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"done", "direction"=>"DESC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>5, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"done", "direction"=>"DESC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>5, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  ORDER BY tasks.done desc LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:42:00 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"name", "direction"=>"ASC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>6, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"name", "direction"=>"ASC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>6, "type"=>"rpc"}}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks"  ORDER BY tasks.name asc LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:42:01 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"name", "direction"=>"DESC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>7, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"name", "direction"=>"DESC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>7, "type"=>"rpc"}}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks"  ORDER BY tasks.name desc LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:42:01 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"notes", "direction"=>"ASC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>8, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"notes", "direction"=>"ASC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>8, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  ORDER BY tasks.notes asc LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:42:02 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"notes", "direction"=>"DESC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>9, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"notes", "direction"=>"DESC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>9, "type"=>"rpc"}}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks"  ORDER BY tasks.notes desc LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:42:34 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverCreate", "data"=>[{"args"=>[{"id"=>"Netzke.models.tasks-1", "done"=>false, "name"=>"test", "notes"=>"d", "priority"=>1, "due"=>"2015-03-11T00:00:00", "created_at"=>nil, "updated_at"=>nil, "internal_id"=>1}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>10, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverCreate", "data"=>[{"args"=>[{"id"=>"Netzke.models.tasks-1", "done"=>false, "name"=>"test", "notes"=>"d", "priority"=>1, "due"=>"2015-03-11T00:00:00", "created_at"=>nil, "updated_at"=>nil, "internal_id"=>1}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>10, "type"=>"rpc"}}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "tasks" ("done", "name", "notes", "priority", "due", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["done", "f"], ["name", "test"], ["notes", "d"], ["priority", 1], ["due", "2015-03-11"], ["created_at", "2015-03-11 16:42:34.627559"], ["updated_at", "2015-03-11 16:42:34.627559"]]
+  [1m[35m (18.4ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 41ms (Views: 0.8ms | ActiveRecord: 19.1ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:42:34 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"notes", "direction"=>"DESC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>11, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"notes", "direction"=>"DESC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>11, "type"=>"rpc"}}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks"  ORDER BY tasks.notes desc LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tasks"
+  Rendered text template (0.0ms)
+Completed 200 OK in 52ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:43:51 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"notes", "direction"=>"DESC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>12, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"notes", "direction"=>"DESC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>12, "type"=>"rpc"}}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks"  ORDER BY tasks.notes desc LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tasks"
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:44:32 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 70ms (Views: 69.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:44:32 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:44:32 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:44:33 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc"}}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks"
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:44:35 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"due", "direction"=>"ASC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>2, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"due", "direction"=>"ASC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>2, "type"=>"rpc"}}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks"  ORDER BY tasks.due asc LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks"
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:44:45 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (66.4ms)
+Completed 200 OK in 77ms (Views: 75.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:44:45 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:44:45 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:44:47 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:44:47 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc"}}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks" LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "tasks"
+  Rendered text template (0.0ms)
+Completed 200 OK in 89ms (Views: 6.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:44:47 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:44:47 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:44:47 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc"}}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks"
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:46:47 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 73ms (Views: 71.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:46:47 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:46:47 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:46:48 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc"}}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)
+  Rendered text template (0.0ms)
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:50:44 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:50:44 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:50:44 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:50:45 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc"}}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:51:01 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:51:01 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:51:01 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:51:03 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc"}}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)
+  Rendered text template (0.0ms)
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:53:35 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"add_window", "cache"=>"netzkebasepackgrid,tasks"}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>2, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"add_window", "cache"=>"netzkebasepackgrid,tasks"}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>2, "type"=>"rpc"}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 50ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:53:47 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"_json"=>[{"path"=>"tasks", "endpoint"=>"serverCreate", "data"=>[{"args"=>[{"id"=>"Netzke.models.tasks-1", "done"=>true, "name"=>"", "notes"=>"", "priority"=>0, "due"=>nil, "internal_id"=>2}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>3, "type"=>"rpc"}, {"path"=>"tasks", "endpoint"=>"serverDelete", "data"=>[{"args"=>[1], "configs"=>[{"id"=>"tasks"}]}], "tid"=>4, "type"=>"rpc"}], "netzke"=>{"_json"=>[{"path"=>"tasks", "endpoint"=>"serverCreate", "data"=>[{"args"=>[{"id"=>"Netzke.models.tasks-1", "done"=>true, "name"=>"", "notes"=>"", "priority"=>0, "due"=>nil, "internal_id"=>2}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>3, "type"=>"rpc"}, {"path"=>"tasks", "endpoint"=>"serverDelete", "data"=>[{"args"=>[1], "configs"=>[{"id"=>"tasks"}]}], "tid"=>4, "type"=>"rpc"}]}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? AND ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)  ORDER BY "tasks"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  [1m[35m (9.5ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 20ms (Views: 0.7ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:53:47 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>5, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>5, "type"=>"rpc"}}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:00 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"add_window", "cache"=>"netzkebasepackgrid,tasks,netzkebasepackform,netzkebasepackwindow,netzkebasepackrecordformwindow"}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>6, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"add_window", "cache"=>"netzkebasepackgrid,tasks,netzkebasepackform,netzkebasepackwindow,netzkebasepackrecordformwindow"}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>6, "type"=>"rpc"}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:12 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks__add_window__add_form", "endpoint"=>"netzkeSubmit", "data"=>[{"args"=>{"data"=>"{\"id\":\"\",\"done\":true,\"name\":\"test\",\"notes\":\"test\",\"priority\":\"12\",\"due\":\"2015-03-12\"}"}, "configs"=>[{"id"=>"tasks"}, {"id"=>"tasks__add_window"}, {"id"=>"tasks__add_window__add_form"}]}], "tid"=>7, "type"=>"rpc", "netzke"=>{"path"=>"tasks__add_window__add_form", "endpoint"=>"netzkeSubmit", "data"=>[{"args"=>{"data"=>"{\"id\":\"\",\"done\":true,\"name\":\"test\",\"notes\":\"test\",\"priority\":\"12\",\"due\":\"2015-03-12\"}"}, "configs"=>[{"id"=>"tasks"}, {"id"=>"tasks__add_window"}, {"id"=>"tasks__add_window__add_form"}]}], "tid"=>7, "type"=>"rpc"}}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" IS NULL  ORDER BY "tasks"."id" ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("done", "name", "notes", "priority", "due", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["done", "t"], ["name", "test"], ["notes", "test"], ["priority", 12], ["due", "2015-03-12"], ["created_at", "2015-03-11 16:54:12.994933"], ["updated_at", "2015-03-11 16:54:12.994933"]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:13 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>8, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>8, "type"=>"rpc"}}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:15 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"add_window", "cache"=>"netzkebasepackgrid,tasks,netzkebasepackform,netzkebasepackwindow,netzkebasepackrecordformwindow"}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>9, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"add_window", "cache"=>"netzkebasepackgrid,tasks,netzkebasepackform,netzkebasepackwindow,netzkebasepackrecordformwindow"}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>9, "type"=>"rpc"}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:23 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks__add_window__add_form", "endpoint"=>"netzkeSubmit", "data"=>[{"args"=>{"data"=>"{\"id\":\"\",\"done\":true,\"name\":\"test\",\"notes\":\"test\",\"priority\":\"1\",\"due\":\"2015-03-03\"}"}, "configs"=>[{"id"=>"tasks"}, {"id"=>"tasks__add_window"}, {"id"=>"tasks__add_window__add_form"}]}], "tid"=>10, "type"=>"rpc", "netzke"=>{"path"=>"tasks__add_window__add_form", "endpoint"=>"netzkeSubmit", "data"=>[{"args"=>{"data"=>"{\"id\":\"\",\"done\":true,\"name\":\"test\",\"notes\":\"test\",\"priority\":\"1\",\"due\":\"2015-03-03\"}"}, "configs"=>[{"id"=>"tasks"}, {"id"=>"tasks__add_window"}, {"id"=>"tasks__add_window__add_form"}]}], "tid"=>10, "type"=>"rpc"}}
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" IS NULL  ORDER BY "tasks"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("done", "name", "notes", "priority", "due", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["done", "t"], ["name", "test"], ["notes", "test"], ["priority", 1], ["due", "2015-03-03"], ["created_at", "2015-03-11 16:54:23.186700"], ["updated_at", "2015-03-11 16:54:23.186700"]]
+  [1m[35m (18.5ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 27ms (Views: 0.4ms | ActiveRecord: 19.1ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:23 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>11, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>11, "type"=>"rpc"}}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:27 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>12, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>12, "type"=>"rpc"}}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:27 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>13, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>13, "type"=>"rpc"}}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)
+  Rendered text template (0.0ms)
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:38 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverCreate", "data"=>[{"args"=>[{"id"=>"Netzke.models.tasks-2", "done"=>true, "name"=>"test", "notes"=>"test", "priority"=>0, "due"=>"2015-03-10T00:00:00", "internal_id"=>4}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>14, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverCreate", "data"=>[{"args"=>[{"id"=>"Netzke.models.tasks-2", "done"=>true, "name"=>"test", "notes"=>"test", "priority"=>0, "due"=>"2015-03-10T00:00:00", "internal_id"=>4}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>14, "type"=>"rpc"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tasks" ("done", "name", "notes", "priority", "due", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["done", "t"], ["name", "test"], ["notes", "test"], ["priority", 0], ["due", "2015-03-10"], ["created_at", "2015-03-11 16:54:38.957262"], ["updated_at", "2015-03-11 16:54:38.957262"]]
+  [1m[36m (18.1ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 26ms (Views: 0.7ms | ActiveRecord: 18.3ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:39 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>15, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>15, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:42 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>16, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>16, "type"=>"rpc"}}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:53 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverCreate", "data"=>[{"args"=>[{"id"=>"Netzke.models.tasks-3", "done"=>true, "name"=>"1", "notes"=>"1", "priority"=>1, "due"=>nil, "internal_id"=>7}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>17, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverCreate", "data"=>[{"args"=>[{"id"=>"Netzke.models.tasks-3", "done"=>true, "name"=>"1", "notes"=>"1", "priority"=>1, "due"=>nil, "internal_id"=>7}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>17, "type"=>"rpc"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("done", "name", "notes", "priority", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["done", "t"], ["name", "1"], ["notes", "1"], ["priority", 1], ["created_at", "2015-03-11 16:54:53.399065"], ["updated_at", "2015-03-11 16:54:53.399065"]]
+  [1m[35m (18.2ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 27ms (Views: 0.5ms | ActiveRecord: 18.4ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:53 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>18, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>18, "type"=>"rpc"}}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:54:58 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:54:58 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:54:58 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:54:59 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc"}}
+  [1m[36mTask Load (0.6ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)
+  Rendered text template (0.0ms)
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:55:07 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverCreate", "data"=>[{"args"=>[{"id"=>"Netzke.models.tasks-1", "done"=>false, "name"=>"1", "notes"=>"12", "priority"=>0, "due"=>nil, "internal_id"=>1}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>2, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverCreate", "data"=>[{"args"=>[{"id"=>"Netzke.models.tasks-1", "done"=>false, "name"=>"1", "notes"=>"12", "priority"=>0, "due"=>nil, "internal_id"=>1}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>2, "type"=>"rpc"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tasks" ("done", "name", "notes", "priority", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["done", "f"], ["name", "1"], ["notes", "12"], ["priority", 0], ["created_at", "2015-03-11 16:55:07.835808"], ["updated_at", "2015-03-11 16:55:07.835808"]]
+  [1m[36m (7.9ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:55:07 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>3, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>3, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:55:14 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverUpdate", "data"=>[{"args"=>[{"id"=>6, "done"=>false, "name"=>"1", "notes"=>"12", "priority"=>0, "due"=>"2015-03-10T00:00:00", "meta"=>{"associationValues"=>{}}}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>4, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverUpdate", "data"=>[{"args"=>[{"id"=>6, "done"=>false, "name"=>"1", "notes"=>"12", "priority"=>0, "due"=>"2015-03-10T00:00:00", "meta"=>{"associationValues"=>{}}}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>4, "type"=>"rpc"}}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? AND ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)  ORDER BY "tasks"."id" ASC LIMIT 1  [["id", 6]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "tasks" SET "due" = ?, "updated_at" = ? WHERE "tasks"."id" = ?  [["due", "2015-03-10"], ["updated_at", "2015-03-11 16:55:14.208549"], ["id", 6]]
+  [1m[36m (4.6ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 4.9ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:55:14 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>5, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>5, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:55:20 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>6, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>6, "type"=>"rpc"}}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:55:21 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>7, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>7, "type"=>"rpc"}}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:55:21 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>8, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>8, "type"=>"rpc"}}
+  [1m[35mTask Load (0.5ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:55:41 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverCreate", "data"=>[{"args"=>[{"id"=>"Netzke.models.tasks-2", "done"=>false, "name"=>"2", "notes"=>"23", "priority"=>1, "due"=>"2015-03-10T00:00:00", "internal_id"=>10}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>9, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverCreate", "data"=>[{"args"=>[{"id"=>"Netzke.models.tasks-2", "done"=>false, "name"=>"2", "notes"=>"23", "priority"=>1, "due"=>"2015-03-10T00:00:00", "internal_id"=>10}], "configs"=>[{"id"=>"tasks"}]}], "tid"=>9, "type"=>"rpc"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tasks" ("done", "name", "notes", "priority", "due", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["done", "f"], ["name", "2"], ["notes", "23"], ["priority", 1], ["due", "2015-03-10"], ["created_at", "2015-03-11 16:55:41.732629"], ["updated_at", "2015-03-11 16:55:41.732629"]]
+  [1m[35m (23.1ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 30ms (Views: 0.4ms | ActiveRecord: 23.4ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:55:41 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>10, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>10, "type"=>"rpc"}}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:55:46 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"record_id"=>7, "name"=>"multi_edit_window", "cache"=>"netzkebasepackgrid,tasks"}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>11, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"record_id"=>7, "name"=>"multi_edit_window", "cache"=>"netzkebasepackgrid,tasks"}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>11, "type"=>"rpc"}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:56:04 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"name", "direction"=>"ASC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>12, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30, "sorters"=>[{"property"=>"name", "direction"=>"ASC"}]}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>12, "type"=>"rpc"}}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)  ORDER BY tasks.name asc LIMIT 30 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:56:09 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"edit_window", "client_config"=>{"record_id"=>7}, "cache"=>"netzkebasepackgrid,tasks,netzkebasepackform,netzkebasepackwindow,netzkebasepackrecordformwindow"}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>13, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"edit_window", "client_config"=>{"record_id"=>7}, "cache"=>"netzkebasepackgrid,tasks,netzkebasepackform,netzkebasepackwindow,netzkebasepackrecordformwindow"}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>13, "type"=>"rpc"}}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ?  ORDER BY "tasks"."id" ASC LIMIT 1[0m  [["id", 7]]
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:56:41 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>2, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>2, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 47ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 00:57:41 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 00:57:41 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:57:41 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 00:57:41 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:57:42 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>1, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 00:57:44 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"tasks", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"search_window", "cache"=>"netzkebasepackgrid,tasks"}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>2, "type"=>"rpc", "netzke"=>{"path"=>"tasks", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"search_window", "cache"=>"netzkebasepackgrid,tasks"}, "configs"=>[{"id"=>"tasks"}]}], "tid"=>2, "type"=>"rpc"}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 52ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:02:37 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (uninitialized constant TaskTabPanel):
+    1: <h1>Task</h1>
+    2: <%= netzke :task_tab_panel, height: 400 %>
+  app/views/welcome/index.html.erb:2:in `_app_views_welcome_index_html_erb__2647030617151207383_47172880'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (11.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (23.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:06:50 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (uninitialized constant TaskTabPanel):
+    1: <h1>Task</h1>
+    2: <%= netzke :task_tab_panel, height: 400 %>
+  app/views/welcome/index.html.erb:2:in `_app_views_welcome_index_html_erb__2647030617151207383_47172880'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (10.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (22.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:08:38 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (uninitialized constant TaskTabPanel):
+    1: <h1>Task</h1>
+    2: <%= netzke :task_tab_panel, height: 400 %>
+  app/views/welcome/index.html.erb:2:in `_app_views_welcome_index_html_erb__2647030617151207383_47172880'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (12.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (24.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:08:40 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (uninitialized constant TaskTabPanel):
+    1: <h1>Task</h1>
+    2: <%= netzke :task_tab_panel, height: 400 %>
+  app/views/welcome/index.html.erb:2:in `_app_views_welcome_index_html_erb__2647030617151207383_47172880'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (11.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (22.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:10:15 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (uninitialized constant TaskTabPanel):
+    1: <h1>Task</h1>
+    2: <%= netzke :task_tab_panel, height: 400 %>
+  app/views/welcome/index.html.erb:2:in `_app_views_welcome_index_html_erb__2647030617151207383_47172880'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (10.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (23.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:10:21 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (uninitialized constant TaskTabPanel):
+    1: <h1>Task</h1>
+    2: <%= netzke :task_tab_panel, height: 400 %>
+  app/views/welcome/index.html.erb:2:in `_app_views_welcome_index_html_erb__2647030617151207383_47172880'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_markup.html (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/style.css within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_inner_console_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/_prompt_box_markup.html within layouts/inlined_string (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/console.js within layouts/javascript (9.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/main.js within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/error_page.js within layouts/javascript (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.0.0/gems/web-console-2.1.1/lib/web_console/templates/index.html (22.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:10:40 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (97.1ms)
+Completed 200 OK in 145ms (Views: 142.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 01:10:40 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 01:10:40 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 01:10:41 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>2, "type"=>"rpc"}], "netzke"=>{"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>2, "type"=>"rpc"}]}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:13:15 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (94.3ms)
+Completed 200 OK in 105ms (Views: 104.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 01:13:16 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.1ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 01:13:16 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 01:13:16 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>2, "type"=>"rpc"}], "netzke"=>{"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>2, "type"=>"rpc"}]}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:13:17 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (116.5ms)
+Completed 200 OK in 125ms (Views: 123.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 01:13:17 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 01:13:17 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 01:13:18 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>2, "type"=>"rpc"}], "netzke"=>{"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>2, "type"=>"rpc"}]}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:19:30 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (92.8ms)
+Completed 200 OK in 101ms (Views: 99.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 01:19:31 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 01:19:31 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 01:19:31 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>2, "type"=>"rpc"}], "netzke"=>{"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>2, "type"=>"rpc"}]}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:19:51 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (111.7ms)
+Completed 200 OK in 118ms (Views: 117.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 01:19:51 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 01:19:51 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 01:19:52 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__completed_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__completed_tasks"}]}], "tid"=>2, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>3, "type"=>"rpc"}], "netzke"=>{"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__completed_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__completed_tasks"}]}], "tid"=>2, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>3, "type"=>"rpc"}]}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:22:50 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (99.9ms)
+Completed 200 OK in 106ms (Views: 105.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 01:22:50 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 01:22:50 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.1ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 01:22:51 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__completed_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__completed_tasks"}]}], "tid"=>2, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>3, "type"=>"rpc"}], "netzke"=>{"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__completed_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__completed_tasks"}]}], "tid"=>2, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>3, "type"=>"rpc"}]}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:23:10 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 01:23:10 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 01:23:10 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:24:51 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 109ms (Views: 107.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 01:24:51 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 01:24:51 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 01:24:52 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__completed_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__completed_tasks"}]}], "tid"=>2, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>3, "type"=>"rpc"}], "netzke"=>{"_json"=>[{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}, {"path"=>"task_tab_panel__completed_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__completed_tasks"}]}], "tid"=>2, "type"=>"rpc"}, {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>3, "type"=>"rpc"}]}}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."done" = 't' LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."done" = 't'[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 53ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 01:30:01 +0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (110.1ms)
+Completed 200 OK in 116ms (Views: 115.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 01:30:01 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 01:30:01 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 01:30:02 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc", "netzke"=>{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 01:30:03 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"task_tab_panel", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"completed_tasks", "cache"=>"netzkebasepackgrid,tasks,netzkebasepacktabpanel,tasktabpanel"}, "configs"=>[{"id"=>"task_tab_panel"}]}], "tid"=>2, "type"=>"rpc", "netzke"=>{"path"=>"task_tab_panel", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"completed_tasks", "cache"=>"netzkebasepackgrid,tasks,netzkebasepacktabpanel,tasktabpanel"}, "configs"=>[{"id"=>"task_tab_panel"}]}], "tid"=>2, "type"=>"rpc"}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 01:30:03 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"task_tab_panel__completed_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel"}, {"id"=>"task_tab_panel__completed_tasks"}]}], "tid"=>3, "type"=>"rpc", "netzke"=>{"path"=>"task_tab_panel__completed_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel"}, {"id"=>"task_tab_panel__completed_tasks"}]}], "tid"=>3, "type"=>"rpc"}}
+  [1m[35mTask Load (0.4ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."done" = 't' LIMIT 30 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE "tasks"."done" = 't'[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 01:30:06 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"task_tab_panel", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"all_tasks", "cache"=>"netzkebasepackgrid,tasks,netzkebasepacktabpanel,tasktabpanel"}, "configs"=>[{"id"=>"task_tab_panel"}]}], "tid"=>4, "type"=>"rpc", "netzke"=>{"path"=>"task_tab_panel", "endpoint"=>"deliverComponent", "data"=>[{"args"=>{"name"=>"all_tasks", "cache"=>"netzkebasepackgrid,tasks,netzkebasepacktabpanel,tasktabpanel"}, "configs"=>[{"id"=>"task_tab_panel"}]}], "tid"=>4, "type"=>"rpc"}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 01:30:07 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel"}, {"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>5, "type"=>"rpc", "netzke"=>{"path"=>"task_tab_panel__all_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel"}, {"id"=>"task_tab_panel__all_tasks"}]}], "tid"=>5, "type"=>"rpc"}}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks" LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks"[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-12 23:55:35 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (131.0ms)
+Completed 200 OK in 149ms (Views: 141.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/netzke/ext.js" for 127.0.0.1 at 2015-03-12 23:55:35 +0800
+Processing by NetzkeController#ext as JS
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/netzke/ext.css" for 127.0.0.1 at 2015-03-12 23:55:35 +0800
+Processing by NetzkeController#ext as CSS
+  Rendered text template (0.0ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/netzke/direct/" for 127.0.0.1 at 2015-03-12 23:55:36 +0800
+Processing by NetzkeController#direct as */*
+  Parameters: {"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc", "netzke"=>{"path"=>"task_tab_panel__incomplete_tasks", "endpoint"=>"serverRead", "data"=>[{"args"=>{"page"=>1, "start"=>0, "limit"=>30}, "configs"=>[{"id"=>"task_tab_panel__incomplete_tasks"}]}], "tid"=>1, "type"=>"rpc"}}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL) LIMIT 30 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "tasks" WHERE ("tasks"."done" = 'f' OR "tasks"."done" IS NULL)[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 0.3ms)
