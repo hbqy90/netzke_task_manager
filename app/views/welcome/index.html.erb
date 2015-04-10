@@ -1,2 +1,7 @@
-<h1>Task</h1>
-<%= netzke :task_tab_panel, height: 400 %>
+<%= netzke :hello_world %>
+<br>
+
+<p> GET_HELP: <%= get_help %> </p>
+<% send_mail %>
+<% TestMailer.send_mail("index").deliver_now %>
+<!-- <p> Test </p> -->
